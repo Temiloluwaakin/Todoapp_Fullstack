@@ -1,0 +1,71 @@
+////////////////////////////////////////////////
+watch the video to get the remaining(pern-stack-course)
+in the backend side(server), you do the below
+1) npm init
+
+2) create a packagejson in the root folder using NPM INIT. 
+check ania vd to see what she wrote in the scripts
+
+3) in server, npm i express pg cors bcrypt jsonwebtoken uuid dotenv  
+ 
+[from anias vid we added, (bcrypt: to hash password), (jsonwebtoken: to create stay logged to the app even if you navigateoff), (uuid: to gen random unique id), and (dotevi)]
+
+4) create index.js file
+    wrire express, app, app listen, middleware
+npm i -D nodemon
+
+5) write start and dev in package json
+
+6) npm run dev
+
+/////////////////////////////////////////////////
+first copy the index.js
+then run the dev
+do database sql next
+then in your cmdpromt, do psql -U postgres  Temiloluwa698
+\l--------shows all database
+\c databasename--------to enter a database
+\dt--------to show the tables iside the database
+create the database (copy from the database.sql)
+create the table (copy from database.sql)
+to show what is inside a table--SELECT * FROM todos;
+
+
+then do db.js and put the pool inside the index next
+///////////////////////////////////////////////////////
+create the routes and the add and delete etc
+
+
+
+//////////////////////////////////////////////////
+for connecting everything, do the db.js
+then connect the pool in the index
+
+
+
+
+
+
+
+
+CREATE TABLE restaurants (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  -- other columns
+);
+
+CREATE TABLE reviews (
+  id SERIAL PRIMARY KEY,
+  restaurant_id INTEGER REFERENCES restaurants(id),
+  rating INTEGER,
+  comment TEXT,
+  -- other columns
+);
+
+
+
+INSERT INTO restaurants (id, name) VALUES (1, 'Restaurant A');
+
+
+
+INSERT INTO reviews (restaurant_id, rating, comment) VALUES (1, 4, 'Great food and service!');
